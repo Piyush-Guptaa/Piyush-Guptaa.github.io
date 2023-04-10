@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'About';
+const description = 'About your blog.';
+const permalink = `${Astro.site.href}about`;
+---
+<BaseLayout title={title} description={description} permalink={permalink} current="about">
+  <div class="container">
+    <h1>About</h1>
+    <p>Hey there! Want to know more about me? I'm a Computer Science and Engineering student at <a target='_blank' href="https://bvcoend.ac.in/">Bharati Vidyapeeth's College of Engineering</a></p>
+    <p>My passion is in software development, particularly in mobile application development, machine learning, and front-end web development</p>
+    <p>I'm proficient in programming languages like <span class="emp-text">C/C++, Python, Dart, Kotlin, JavaScript, HTML </span>and <span class="emp-text">CSS</span> and experienced in databases like <span class="emp-text">Firebase, MYSQL  </span>and <span class="emp-text">MongoDB.</span> </p>
+    <p> I have worked as a Flutter Developer Intern at <a target='_blank' href="">Shuniyavigyan</a>.</p>
+  </div>
+</BaseLayout>
+
+<style>
+  .about-image {
+    float: right;
+    margin: -3em -7em 2em 2em;
+    max-width: 300px;
+  }
+
+  .about-image img {
+    border-radius: 8px;
+    margin-bottom: 1.5em;
+  }
+
+  @media (max-width: 1020px) {
+    .about-image {
+      float: none;
+      margin: 0 auto 2em;
+    }
+  }
+</style>
