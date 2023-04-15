@@ -52,4 +52,19 @@ const permalink = `${Astro.site.href}project/${slug}`;
     min-width: 100px;
     width: 30%;
   }
+  /* Modify the CSS for smaller screens */
+  @media only screen and (max-width: 600px) {
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 0.3em;
+    }
+
+    header p {
+      font-size: 1.5em;
+    }
+
+    header hr {
+      width: 50%;
+    }
+  }
 </style>
