@@ -5,7 +5,7 @@ import Nav from './Nav.astro'
 const { current = '' } = Astro.props;
 ---
 
-<style>
+<!-- <style>
   header {
     display: flex;
     margin: 0 auto;
@@ -13,7 +13,26 @@ const { current = '' } = Astro.props;
     padding: 2em;
     width: 100%;
   }
+</style> -->
+<style>
+  header {
+    display: flex;
+    margin: 0 auto;
+
+    padding: 2em; /* reduce padding for smaller screens */
+    width: 100%;
+  }
+
+  /* apply different styles for screens smaller than 768px */
+  @media (max-width: 767px) {
+    header {
+      padding: 0.5em;
+      flex-direction: column; /* stack child elements vertically on small screens */
+      align-items: center; /* center child elements horizontally */
+    }
+  }
 </style>
+
 
 <header>
   <Logo />
