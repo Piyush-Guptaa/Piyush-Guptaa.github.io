@@ -1,19 +1,7 @@
 ---
 import ThemeToggleButton from "./ThemeToggleButton.svelte";
 const { current = "" } = Astro.props;
-<script>
-  if (current === "") {
-    async function incrementCount() {
-      const response = await fetch('https://api.countapi.xyz/hit/namespace/piyushgupta.me');
-      const data = await response.json();
-      const countSpan = document.getElementById('count');
-      countSpan.textContent = data.value;
-    }
-    window.addEventListener('load', incrementCount);
-  }
-</script>
 ---
-
 
 <style>
   nav {
@@ -74,7 +62,20 @@ const { current = "" } = Astro.props;
 </style>
 
 <nav>
-  <a class={current === "" ? "selected" : ""} href="/">home</a>
+  <a class={current === "" ? "selected" : ""} href="/">
+    home
+    <script>
+      if (current === "") {
+        async function incrementCount() {
+          const response = await fetch('https://api.countapi.xyz/hit/namespace/piyushgupta.me');
+          const data = await response.json();
+          const countSpan = document.getElementById('count');
+          countSpan.textContent = data.value;
+        }
+        window.addEventListener('load', incrementCount);
+      }
+    </script>
+  </a>
   <a class={current === "about" ? "selected" : ""} href="/about">about</a>
   <a class={current === "project" ? "selected" : ""} href="/project">projects</a>
 </nav>
