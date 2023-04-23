@@ -1,7 +1,7 @@
 <script>
   const rootEl = typeof document !== 'undefined' ? document.documentElement : null;
   const themes = ['light', 'dark'];
-  let theme = ''
+  let theme = '';
 
   if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
     theme = localStorage.getItem('theme');
@@ -9,9 +9,17 @@
     theme = 'dark';
   }
 
+  async function incrementCount() {
+    const response = await fetch('https://api.countapi.xyz/hit/namespace/piyushgupta.me');
+    const data = await response.json();
+    const countSpan = document.getElementById('count');
+    countSpan.textContent = data.value;
+  }
+
   function handleChange(event) {
     theme = event.target.value;
     localStorage.setItem('theme', theme);
+    incrementCount(); // Call the increment function on theme change
   }
 
   $: if (rootEl && theme === 'light') {
