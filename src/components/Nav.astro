@@ -64,7 +64,7 @@ const { current = "" } = Astro.props;
 <nav>
   <a class={current === "" ? "selected" : ""} href="/">
     home
-    <script>
+    <!-- <script>
       if(current===""){
           async function incrementCount() {
           const response = await fetch('https://api.countapi.xyz/hit/namespace/piyushgupta.me');
@@ -74,7 +74,7 @@ const { current = "" } = Astro.props;
         }
         window.addEventListener('load', incrementCount);
       }
-    </script>
+    </script> -->
   </a>
   <a class={current === "about" ? "selected" : ""} href="/about">about</a>
   <a class={current === "project" ? "selected" : ""} href="/project">projects</a>
