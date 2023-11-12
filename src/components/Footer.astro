@@ -12,11 +12,11 @@ const { current = '' } = Astro.props;
   }
   window.addEventListener('load', DisplayCount);
 </script> -->
+
+
 <footer>
   <span>
-    &copy; {new Date().getFullYear()} Piyush Gupta.  | 
-    Powered by <a href="https://astro.build" target="_blank" rel="noopener">Astro</a>.
-    | <a href="" target="_blank" rel="noopener">Created with Astro Blog Template</a>.
+    &copy; {new Date().getFullYear()} Piyush Gupta. All rights reserved.
   </span>
   <div class="toggle-container">
     <div>
@@ -25,10 +25,13 @@ const { current = '' } = Astro.props;
        <a class="footer-link" href="https://github.com/Piyush-Guptaa" target="_blank">GitHub</a>
        <a class="footer-link" href="https://youtube.com/@piyushguptaaa" target="_blank">YouTube</a>
      </div>
+  
     <ThemeToggleButton client:load />
     <!-- <div>Count: <span id="count"></span></div>     -->
   </div>
-  
+  <span>
+    Visitors Count  <a href="https://www.cutercounter.com/" target="_blank"><img src="https://www.cutercounter.com/hits.php?id=hxondno&nd=6&style=2" alt="visitor counter"></a>
+  </span>
 </footer>
 
 <style>
